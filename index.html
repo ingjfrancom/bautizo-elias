@@ -325,6 +325,149 @@
       letter-spacing: 0.1em;
       border-top: 1px solid var(--blue-pale);
     }
+
+    /* ── MESA DE REGALOS ── */
+    .regalo-section {
+      margin-top: 1.5rem;
+      padding: 1.1rem;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e8f5fb 100%);
+      border-radius: 8px;
+      border: 1px solid var(--blue-pale);
+      text-align: center;
+    }
+
+    .regalo-eyebrow {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--blue-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    .regalo-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      margin-bottom: 0.65rem;
+    }
+
+    .gift-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.4rem;
+      border-radius: 100px;
+      background: white;
+      color: var(--blue-dark);
+      border: 1.5px solid var(--blue);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .gift-btn:hover { background: var(--blue); color: white; }
+
+    /* ── RSVP FORM ── */
+    .rsvp-form {
+      margin-top: 1rem;
+      background: var(--blue-light);
+      border-radius: 8px;
+      padding: 1.25rem;
+      text-align: left;
+    }
+
+    .form-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.4rem;
+      color: var(--text-dark);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .form-group { margin-bottom: 0.85rem; }
+
+    .form-label {
+      display: block;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--blue-pale);
+      border-radius: 6px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      background: white;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-input:focus { border-color: var(--blue); }
+
+    .radio-group { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+
+    .radio-opt {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+
+    .radio-opt input[type="radio"] { accent-color: var(--blue); }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0.75rem;
+      border-radius: 100px;
+      background: var(--blue);
+      color: white;
+      border: none;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .submit-btn:hover { background: var(--blue-dark); }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    /* ── SUCCESS ── */
+    .success-msg {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--blue-light);
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .success-icon { font-size: 2.2rem; margin-bottom: 0.4rem; }
+
+    .success-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      color: var(--text-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .success-sub {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
   </style>
 </head>
 <body>
@@ -440,11 +583,48 @@
         </div>
       </div>
 
-      <!-- CONFIRM -->
-      <div class="confirm-wrap">
-        <a class="confirm-btn" id="confirm-link" href="https://wa.me/521XXXXXXXXXX?text=Confirmo+mi+asistencia+al+bautizo+de+Elías+✝">
-          ✉ Confirmar asistencia
+      <!-- MESA DE REGALOS -->
+      <div class="regalo-section">
+        <p class="regalo-eyebrow">🎁 Mesa de regalos</p>
+        <p class="regalo-title">¿Nos quieres regalar algo?</p>
+        <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/52021657" target="_blank" rel="noopener" class="gift-btn">
+          Ver lista en Liverpool →
         </a>
+      </div>
+
+      <!-- CONFIRM -->
+      <div class="confirm-wrap" id="confirm-wrap">
+        <button class="confirm-btn" onclick="showForm()">
+          ✉ Confirmar asistencia
+        </button>
+      </div>
+
+      <!-- RSVP FORM -->
+      <div class="rsvp-form" id="rsvp-form" style="display:none">
+        <p class="form-title">Confirmar asistencia</p>
+        <div class="form-group">
+          <label class="form-label">Nombre o familia</label>
+          <input type="text" id="f-nombre" class="form-input" placeholder="Ej. Familia García" autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">¿Cuántas personas confirman?</label>
+          <input type="number" id="f-personas" class="form-input" min="1" max="30" value="1" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Invitados de parte de</label>
+          <div class="radio-group">
+            <label class="radio-opt"><input type="radio" name="lado" value="materna" checked /> Mamá (Materna)</label>
+            <label class="radio-opt"><input type="radio" name="lado" value="paterna" /> Papá (Paterna)</label>
+          </div>
+        </div>
+        <button class="submit-btn" id="submit-btn" onclick="submitRSVP()">Confirmar asistencia ✓</button>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="success-msg" id="success-msg" style="display:none">
+        <div class="success-icon">🕊️</div>
+        <p class="success-title">¡Gracias!</p>
+        <p class="success-sub">Tu asistencia ha sido confirmada.<br>¡Los esperamos con mucho cariño!</p>
       </div>
 
     </div><!-- /content -->
@@ -497,6 +677,54 @@
 
   tick();
   setInterval(tick, 1000);
+
+  const SUPA_URL = 'https://ewkosyqwtmrwmzkdqadd.supabase.co';
+  const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV3a29zeXF3dG1yd216a2RxYWRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxNjUwNzcsImV4cCI6MjA5MDc0MTA3N30.2QgHzrIXwDc9PpezfkM13roY86F0NDk4hqvhNKOJ2os';
+
+  function showForm() {
+    document.getElementById('confirm-wrap').style.display = 'none';
+    document.getElementById('rsvp-form').style.display = 'block';
+    setTimeout(() => document.getElementById('f-nombre').focus(), 100);
+  }
+
+  async function submitRSVP() {
+    const nombre   = document.getElementById('f-nombre').value.trim();
+    const personas = parseInt(document.getElementById('f-personas').value) || 1;
+    const lado     = document.querySelector('input[name="lado"]:checked').value;
+    const btn      = document.getElementById('submit-btn');
+
+    if (!nombre) {
+      document.getElementById('f-nombre').focus();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    try {
+      const res = await fetch(`${SUPA_URL}/rest/v1/confirmaciones_bautizo`, {
+        method: 'POST',
+        headers: {
+          'apikey': SUPA_KEY,
+          'Authorization': 'Bearer ' + SUPA_KEY,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({ nombre_familia: nombre, num_personas: personas, lado })
+      });
+
+      if (res.ok || res.status === 201) {
+        document.getElementById('rsvp-form').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+      } else {
+        throw new Error('status ' + res.status);
+      }
+    } catch (e) {
+      btn.disabled = false;
+      btn.textContent = 'Confirmar asistencia ✓';
+      alert('Hubo un error al guardar tu confirmación. Por favor intenta de nuevo.');
+    }
+  }
 </script>
 
 </body>
