@@ -1,576 +1,775 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bautizo de Elías · 18 Julio 2026</title>
-  <meta property="og:title" content="🕊️ Bautizo de Elías · 18 Julio 2026"/>
-  <meta property="og:description" content="Nos complace invitarte a celebrar el bautizo de Elías. ¡Aparta la fecha!"/>
-  <meta name="theme-color" content="#d47888"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Raleway:wght@300;400&display=swap" rel="stylesheet"/>
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{
-      --cream:#fdf5e0; --rose:#d47888; --blue:#7ab4cc;
-      --gold:#c8921a; --sage:#7aaa6a; --lilac:#b080cc;
-      --terr:#cc7060; --amber:#e8b030;
-      --text:#3a2410; --mid:#7a5030; --lt:#b08060;
-    }
-    html,body{min-height:100vh}
-    body{
-      font-family:'Raleway',sans-serif;
-      background:linear-gradient(170deg,#fff8e4 0%,#fdf0cc 40%,#fdf5e0 100%);
-    }
-    .page{max-width:430px;margin:0 auto;padding-bottom:2.5rem}
+ <meta charset="UTF-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>Bautizo de Elías · 18 Julio 2026</title>
+ <meta property="og:title" content="🕊️ Bautizo de Elías · 18 Julio 2026"/>
+ <meta property="og:description" content="Nos complace invitarte a celebrar el bautizo de Elías. ¡Aparta la fecha!"/>
+ <meta name="theme-color" content="#24509e"/>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+ <style>
+ *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+ :root{
+ --azul:#24509e; /* cobalto principal */
+ --azul-d:#173a78; /* cobalto profundo */
+ --azul-m:#3f74c2; /* azul medio */
+ --azul-c:#8fb2e0; /* azul claro */
+ --hielo:#e9f0fa; /* azul hielo */
+ --papel:#faf7f0; /* blanco hueso */
+ --blanco:#ffffff;
+ --tinta:#1c3258; /* texto principal */
+ --tinta-2:#48618f; /* texto secundario */
+ --tinta-3:#7e92b8; /* texto terciario */
+ }
+ html{scroll-behavior:smooth}
+ html,body{min-height:100vh}
+ body{
+ font-family:'Jost',sans-serif;
+ color:var(--tinta);
+ background:
+ radial-gradient(circle at 15% 8%, rgba(143,178,224,.14), transparent 42%),
+ radial-gradient(circle at 88% 30%, rgba(36,80,158,.07), transparent 38%),
+ linear-gradient(175deg,#fdfbf6 0%,var(--papel) 55%,#f3f0e7 100%);
+ }
+ .page{max-width:440px;margin:0 auto;padding-bottom:2.5rem;overflow:hidden}
 
-    /* ── PAPEL PICADO ── */
-    .picado-wrap{width:100%;overflow:hidden}
-    .picado-svg{width:100%;display:block}
-    .picado-shadow{height:8px;background:linear-gradient(180deg,rgba(100,50,0,.1) 0%,transparent 100%)}
+ /* ───────── PAPEL PICADO ───────── */
+ .picado-wrap{width:100%;overflow:hidden}
+ .picado-svg{width:100%;display:block}
+ .flag{transform-box:fill-box;transform-origin:50% 0}
+ @keyframes sway{
+ 0%,100%{transform:rotate(-1.6deg)}
+ 50%{transform:rotate(1.6deg)}
+ }
+ .flag{animation:sway 4.6s ease-in-out infinite}
+ .flag:nth-child(odd){animation-duration:5.4s;animation-delay:-1.3s}
+ .flag:nth-child(3n){animation-delay:-2.6s}
 
-    /* ── CONTENT ── */
-    .content{padding:.75rem 2rem 2rem;text-align:center;position:relative}
+ /* ───────── REVEAL ON SCROLL ───────── */
+ .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+ .rv.in{opacity:1;transform:none}
 
-    .orn-row{display:flex;align-items:center;justify-content:center;gap:.5rem;margin:.6rem 0}
-    .orn-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,146,26,.35))}
-    .orn-line.r{background:linear-gradient(90deg,rgba(200,146,26,.35),transparent)}
+ /* ───────── HERO / MARCO TROQUELADO ───────── */
+ .hero{position:relative;padding:1.4rem 1.1rem .4rem}
+ .marco{
+ position:relative;background:var(--blanco);
+ border-radius:18px;
+ box-shadow:0 18px 45px -18px rgba(23,58,120,.28), 0 2px 8px rgba(23,58,120,.06);
+ padding:.85rem;
+ }
+ .marco-svg{width:100%;display:block}
 
-    .cross-svg{width:34px;height:46px;fill:var(--gold);margin-bottom:.25rem}
+ /* ───────── TIPOGRAFÍA HERO (HTML sobre el marco) ───────── */
+ .hero-text{
+ position:absolute;inset:0;display:flex;flex-direction:column;
+ align-items:center;text-align:center;pointer-events:none;
+ padding:0 12%;
+ }
+ .eyebrow{
+ font-family:'EB Garamond',serif;font-style:italic;
+ font-size:clamp(.85rem,3.6vw,1rem);color:var(--azul-m);
+ letter-spacing:.06em;margin-top:30%;line-height:1.45;
+ }
+ .name{
+ font-family:'Berkshire Swash',cursive;font-weight:400;
+ font-size:clamp(4rem,21vw,5.4rem);
+ color:var(--azul);line-height:.95;margin-top:.4rem;
+ text-shadow:0 2px 0 rgba(255,255,255,.8), 0 6px 18px rgba(36,80,158,.18);
+ }
+ .father{
+ font-family:'Jost',sans-serif;font-weight:400;
+ font-size:clamp(.6rem,2.6vw,.72rem);color:var(--tinta-2);
+ letter-spacing:.32em;text-transform:uppercase;margin-top:1rem;
+ }
+ .hero-date{
+ display:flex;align-items:center;gap:.85rem;margin-top:5%;
+ }
+ .hd-side{
+ font-family:'EB Garamond',serif;font-size:clamp(.78rem,3vw,.9rem);
+ letter-spacing:.2em;color:var(--tinta-2);text-transform:uppercase;
+ }
+ .hd-num{
+ font-family:'EB Garamond',serif;font-weight:600;
+ font-size:clamp(2.6rem,12vw,3.3rem);color:var(--azul-d);line-height:1;
+ border-left:1px solid var(--azul-c);border-right:1px solid var(--azul-c);
+ padding:0 .85rem;
+ }
+ .hd-year{
+ font-family:'EB Garamond',serif;font-size:clamp(.62rem,2.5vw,.72rem);
+ letter-spacing:.5em;color:var(--tinta-3);margin-top:2%;
+ }
+ .save{
+ font-family:'Berkshire Swash',cursive;font-size:clamp(1.25rem,5.5vw,1.55rem);
+ color:var(--azul-m);margin-top:3.5%;
+ }
 
-    .eyebrow{
-      font-family:'Cormorant Garamond',serif;font-style:italic;
-      font-size:.95rem;color:var(--lt);letter-spacing:.12em;margin-bottom:.1rem
-    }
-    .name{
-      font-family:'Great Vibes',cursive;
-      font-size:clamp(4.8rem,22vw,6rem);
-      color:var(--text);line-height:1.05;margin:.1rem 0 .15rem
-    }
-    .father{
-      font-family:'Cormorant Garamond',serif;font-weight:300;
-      font-size:.85rem;color:var(--mid);letter-spacing:.22em;
-      text-transform:uppercase;margin-bottom:.2rem
-    }
-    .date-row{display:flex;align-items:center;justify-content:center;gap:1rem;margin:.7rem 0 .2rem}
-    .date-dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
-    .date-day,.date-month{
-      font-family:'Cormorant Garamond',serif;font-size:.82rem;
-      letter-spacing:.15em;color:var(--mid);text-transform:uppercase
-    }
-    .date-num{
-      font-family:'Cormorant Garamond',serif;font-size:3rem;
-      font-weight:600;color:var(--rose);line-height:1
-    }
-    .date-year{
-      font-family:'Cormorant Garamond',serif;font-size:.68rem;
-      letter-spacing:.4em;color:var(--lt);text-transform:uppercase
-    }
-    .save{font-family:'Great Vibes',cursive;font-size:2rem;color:var(--mid);margin-top:.35rem}
+ /* ───────── SECCIONES ───────── */
+ .content{padding:.4rem 1.6rem 0;text-align:center}
+ .sec-eye{
+ display:inline-flex;align-items:center;gap:.6rem;
+ font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;
+ color:var(--azul-m);margin:1.6rem 0 .7rem;font-weight:500;
+ }
+ .sec-eye::before,.sec-eye::after{
+ content:"";width:26px;height:1px;
+ background:linear-gradient(90deg,transparent,var(--azul-c));
+ }
+ .sec-eye::after{background:linear-gradient(90deg,var(--azul-c),transparent)}
 
-    .card{
-      background:rgba(255,255,255,.6);
-      border:1px solid rgba(200,146,26,.18);
-      border-radius:14px;padding:1rem 1.25rem;
-      margin:1.1rem 0;text-align:left;
-      backdrop-filter:blur(6px)
-    }
-    .dr{display:flex;gap:.9rem;align-items:flex-start;padding:.5rem 0;border-bottom:1px solid rgba(200,146,26,.1)}
-    .dr:last-child{border-bottom:none}
-    .dr-icon{font-size:1rem;flex-shrink:0;margin-top:2px}
-    .dr-key{font-size:.57rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.1rem}
-    .dr-val{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--text)}
-    .dr-val.ph{font-style:italic;color:var(--lt);font-size:.82rem}
+ /* ───────── DETALLES ───────── */
+ .card{
+ background:var(--blanco);
+ border:1px solid var(--hielo);
+ border-radius:16px;padding:.4rem 1.2rem;
+ text-align:left;
+ box-shadow:0 10px 30px -14px rgba(23,58,120,.18);
+ }
+ .dr{display:flex;gap:.95rem;align-items:center;padding:.85rem 0;border-bottom:1px dashed #dde7f4}
+ .dr:last-child{border-bottom:none}
+ .dr-icon{
+ width:38px;height:38px;flex-shrink:0;border-radius:50%;
+ background:var(--hielo);display:flex;align-items:center;justify-content:center;
+ }
+ .dr-icon svg{width:19px;height:19px;stroke:var(--azul)}
+ .dr-key{font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--azul-m);margin-bottom:.18rem;font-weight:500}
+ .dr-val{font-family:'EB Garamond',serif;font-size:1.02rem;color:var(--tinta)}
+ .dr-val.ph{font-style:italic;color:var(--tinta-3);font-size:.92rem}
 
-    .cd-label{
-      font-family:'Cormorant Garamond',serif;font-style:italic;
-      font-size:.8rem;color:var(--lt);margin-bottom:.55rem;letter-spacing:.08em
-    }
-    .cd-row{display:flex;justify-content:center;gap:.45rem;margin-bottom:1.25rem}
-    .cd-unit{
-      background:rgba(255,255,255,.7);border:1px solid rgba(200,146,26,.2);
-      border-radius:10px;padding:.5rem .6rem;min-width:60px;text-align:center
-    }
-    .cd-num{
-      font-family:'Cormorant Garamond',serif;font-size:1.65rem;
-      font-weight:600;color:var(--rose);line-height:1;display:block
-    }
-    .cd-lbl{font-size:.45rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lt);display:block;margin-top:.12rem}
+ /* ───────── COUNTDOWN ───────── */
+ .cd-row{display:flex;justify-content:center;gap:.5rem}
+ .cd-unit{
+ background:var(--blanco);border:1px solid var(--hielo);
+ border-radius:12px;padding:.65rem .35rem .5rem;flex:1;max-width:78px;
+ text-align:center;position:relative;overflow:hidden;
+ box-shadow:0 8px 22px -12px rgba(23,58,120,.2);
+ }
+ .cd-unit::after{
+ content:"";position:absolute;left:14%;right:14%;top:0;height:3px;
+ background:linear-gradient(90deg,var(--azul-c),var(--azul),var(--azul-c));
+ border-radius:0 0 4px 4px;
+ }
+ .cd-num{
+ font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:600;
+ color:var(--azul-d);line-height:1;display:block;
+ font-variant-numeric:tabular-nums;transition:transform .25s;
+ }
+ .cd-num.tick{transform:translateY(-2px)}
+ .cd-lbl{font-size:.46rem;letter-spacing:.24em;text-transform:uppercase;color:var(--tinta-3);display:block;margin-top:.3rem}
 
-    .cta{
-      display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
-      padding:.8rem 2.2rem;background:var(--rose);color:#fff;
-      font-family:'Raleway',sans-serif;font-size:.7rem;letter-spacing:.22em;
-      text-transform:uppercase;text-decoration:none;border-radius:100px;
-      box-shadow:0 4px 14px rgba(212,120,136,.4);transition:all .2s
-    }
-    .cta:hover{background:#bf6070;box-shadow:0 6px 20px rgba(212,120,136,.5)}
+ /* ───────── BOTONES ───────── */
+ .btn{
+ display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+ padding:.82rem 1.9rem;border-radius:100px;border:none;cursor:pointer;
+ font-family:'Jost',sans-serif;font-size:.68rem;font-weight:500;
+ letter-spacing:.22em;text-transform:uppercase;text-decoration:none;
+ transition:all .22s ease;
+ }
+ .btn-azul{
+ background:linear-gradient(160deg,var(--azul-m),var(--azul) 55%,var(--azul-d));
+ color:#fff;box-shadow:0 8px 22px -8px rgba(36,80,158,.55);
+ }
+ .btn-azul:hover{transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(36,80,158,.6)}
+ .btn-azul:active{transform:none}
+ .btn-linea{
+ background:transparent;color:var(--azul);
+ border:1.5px solid var(--azul-c);
+ }
+ .btn-linea:hover{background:var(--hielo);border-color:var(--azul-m)}
+ .btn-row{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center}
+ .btn-sm{padding:.6rem 1.15rem;font-size:.6rem;letter-spacing:.18em}
 
-    .footer{
-      font-family:'Cormorant Garamond',serif;font-style:italic;
-      font-size:.76rem;color:var(--lt);text-align:center;
-      padding:1rem 1rem 1.5rem;letter-spacing:.1em
-    }
+ /* ───────── MESA DE REGALOS ───────── */
+ .regalo{
+ background:linear-gradient(165deg,var(--blanco),var(--hielo));
+ border:1px solid #dbe6f5;border-radius:16px;
+ padding:1.25rem 1.1rem 1.35rem;
+ box-shadow:0 10px 30px -14px rgba(23,58,120,.18);
+ }
+ .regalo-title{
+ font-family:'EB Garamond',serif;font-size:1.05rem;
+ color:var(--tinta-2);margin-bottom:.85rem;font-style:italic;
+ }
 
-    /* ── MESA DE REGALOS ── */
-    .regalo-section{
-      margin:1rem 0 1.25rem;padding:1rem 1.1rem;
-      background:rgba(255,255,255,.65);
-      border:1px solid rgba(200,146,26,.22);
-      border-radius:12px;text-align:center;
-      backdrop-filter:blur(4px)
-    }
-    .regalo-eye{
-      font-size:.57rem;letter-spacing:.28em;text-transform:uppercase;
-      color:var(--gold);margin-bottom:.25rem
-    }
-    .regalo-title{
-      font-family:'Cormorant Garamond',serif;font-size:.92rem;
-      color:var(--mid);margin-bottom:.65rem
-    }
-    .gift-btn{
-      display:inline-flex;align-items:center;gap:.4rem;
-      padding:.55rem 1.4rem;border-radius:100px;
-      background:transparent;color:var(--gold);
-      border:1.5px solid rgba(200,146,26,.55);
-      font-family:'Raleway',sans-serif;font-size:.68rem;
-      letter-spacing:.18em;text-transform:uppercase;
-      text-decoration:none;transition:all .2s
-    }
-    .gift-btn:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+ /* ───────── RSVP ───────── */
+ .rsvp-form{
+ background:var(--blanco);border:1px solid var(--hielo);
+ border-radius:16px;padding:1.4rem 1.25rem;text-align:left;
+ box-shadow:0 10px 30px -14px rgba(23,58,120,.18);
+ display:none;
+ }
+ .form-ttl{
+ font-family:'Berkshire Swash',cursive;font-size:1.35rem;
+ color:var(--azul);text-align:center;margin-bottom:1rem;
+ }
+ .form-grp{margin-bottom:.95rem}
+ .form-lbl{
+ display:block;font-size:.56rem;letter-spacing:.24em;font-weight:500;
+ text-transform:uppercase;color:var(--azul-m);margin-bottom:.32rem;
+ }
+ .form-inp{
+ width:100%;padding:.62rem .8rem;
+ border:1.5px solid #dde7f4;border-radius:10px;
+ font-family:'Jost',sans-serif;font-size:.92rem;
+ color:var(--tinta);background:#fdfdfd;
+ outline:none;transition:border-color .2s, box-shadow .2s;
+ }
+ .form-inp:focus{border-color:var(--azul-m);box-shadow:0 0 0 3px rgba(63,116,194,.14)}
+ .stepper{display:flex;align-items:center;gap:.6rem}
+ .step-btn{
+ width:40px;height:40px;border-radius:50%;border:1.5px solid var(--azul-c);
+ background:var(--blanco);color:var(--azul);font-size:1.2rem;line-height:1;
+ cursor:pointer;transition:all .15s;flex-shrink:0;
+ display:flex;align-items:center;justify-content:center;
+ }
+ .step-btn:hover{background:var(--hielo)}
+ .step-btn:active{transform:scale(.92)}
+ .step-val{
+ font-family:'EB Garamond',serif;font-size:1.5rem;font-weight:600;
+ color:var(--azul-d);min-width:2.2ch;text-align:center;
+ }
+ .step-note{font-size:.72rem;color:var(--tinta-3);margin-left:.2rem}
+ .radio-grp{display:flex;gap:.55rem}
+ .radio-opt{flex:1;cursor:pointer;position:relative}
+ .radio-opt input{position:absolute;opacity:0;pointer-events:none}
+ .radio-pill{
+ display:block;text-align:center;padding:.62rem .4rem;
+ border:1.5px solid #dde7f4;border-radius:10px;
+ font-size:.78rem;color:var(--tinta-2);transition:all .18s;
+ }
+ .radio-opt input:checked + .radio-pill{
+ background:var(--hielo);border-color:var(--azul-m);
+ color:var(--azul-d);font-weight:500;
+ }
+ .radio-opt input:focus-visible + .radio-pill{box-shadow:0 0 0 3px rgba(63,116,194,.25)}
+ .submit-btn{width:100%;margin-top:.4rem}
+ .submit-btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+ .form-err{
+ display:none;margin-top:.6rem;padding:.55rem .8rem;border-radius:8px;
+ background:#fdf0f0;border:1px solid #f0cccc;color:#a33;font-size:.78rem;
+ }
 
-    /* ── RSVP FORM ── */
-    .rsvp-form{
-      margin-top:1rem;background:rgba(255,255,255,.7);
-      border:1px solid rgba(200,146,26,.18);
-      border-radius:12px;padding:1.25rem;
-      text-align:left;backdrop-filter:blur(4px)
-    }
-    .form-ttl{
-      font-family:'Cormorant Garamond',serif;font-style:italic;
-      font-size:1.15rem;color:var(--mid);text-align:center;
-      margin-bottom:.85rem;letter-spacing:.05em
-    }
-    .form-grp{margin-bottom:.8rem}
-    .form-lbl{
-      display:block;font-size:.57rem;letter-spacing:.22em;
-      text-transform:uppercase;color:var(--gold);margin-bottom:.28rem
-    }
-    .form-inp{
-      width:100%;padding:.55rem .75rem;
-      border:1px solid rgba(200,146,26,.25);border-radius:8px;
-      font-family:'Raleway',sans-serif;font-size:.88rem;
-      color:var(--text);background:rgba(255,255,255,.9);
-      outline:none;transition:border-color .2s
-    }
-    .form-inp:focus{border-color:var(--gold)}
-    .radio-grp{display:flex;gap:1.1rem;flex-wrap:wrap}
-    .radio-opt{
-      display:flex;align-items:center;gap:.35rem;
-      font-size:.83rem;color:var(--mid);cursor:pointer
-    }
-    .radio-opt input[type="radio"]{accent-color:var(--rose)}
-    .submit-btn{
-      width:100%;margin-top:.35rem;padding:.75rem;border-radius:100px;
-      background:var(--rose);color:#fff;border:none;
-      font-family:'Raleway',sans-serif;font-size:.7rem;
-      letter-spacing:.22em;text-transform:uppercase;
-      cursor:pointer;transition:background .2s;
-      box-shadow:0 4px 14px rgba(212,120,136,.3)
-    }
-    .submit-btn:hover{background:#bf6070}
-    .submit-btn:disabled{opacity:.6;cursor:not-allowed}
+ /* ───────── SUCCESS ───────── */
+ .success-msg{
+ display:none;text-align:center;padding:1.7rem 1.2rem;
+ background:var(--blanco);border:1px solid var(--hielo);
+ border-radius:16px;position:relative;overflow:hidden;
+ box-shadow:0 10px 30px -14px rgba(23,58,120,.18);
+ }
+ .success-ttl{
+ font-family:'Berkshire Swash',cursive;font-size:1.7rem;
+ color:var(--azul);margin:.5rem 0 .3rem;
+ }
+ .success-sub{font-size:.85rem;color:var(--tinta-2);line-height:1.65}
 
-    /* ── SUCCESS ── */
-    .success-msg{
-      text-align:center;padding:1.5rem 1rem;
-      background:rgba(255,255,255,.7);
-      border:1px solid rgba(200,146,26,.18);
-      border-radius:12px;margin-top:1rem
-    }
-    .success-icon{font-size:2.2rem;margin-bottom:.4rem}
-    .success-ttl{
-      font-family:'Cormorant Garamond',serif;font-style:italic;
-      font-size:1.4rem;color:var(--mid);margin-bottom:.25rem
-    }
-    .success-sub{font-size:.82rem;color:var(--lt);line-height:1.6}
-  </style>
+ /* palomas al confirmar */
+ .dove-fly{
+ position:fixed;bottom:-40px;font-size:1.6rem;pointer-events:none;z-index:50;
+ animation:flyup 3.2s ease-in forwards;
+ }
+ @keyframes flyup{
+ 0%{transform:translate(0,0) rotate(0);opacity:0}
+ 12%{opacity:1}
+ 100%{transform:translate(var(--dx),-110vh) rotate(var(--dr));opacity:0}
+ }
+
+ .footer{
+ font-family:'EB Garamond',serif;font-style:italic;
+ font-size:.82rem;color:var(--tinta-3);text-align:center;
+ padding:1.6rem 1rem 0;letter-spacing:.08em;
+ }
+ .footer-orn{display:block;margin:0 auto .5rem;opacity:.7}
+
+ @media (prefers-reduced-motion: reduce){
+ .flag{animation:none}
+ .rv{transition:none;opacity:1;transform:none}
+ .dove-fly{animation-duration:.01s}
+ html{scroll-behavior:auto}
+ }
+ </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- PAPEL PICADO -->
-  <div class="picado-wrap">
-    <svg class="picado-svg" viewBox="0 0 444 132" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="rgba(140,70,0,.13)"/>
-          <stop offset="100%" stop-color="rgba(140,70,0,0)"/>
-        </linearGradient>
-      </defs>
-      <rect x="0" y="6" width="444" height="32" fill="url(#sg)"/>
-      <!-- Cord -->
-      <path d="M-5,12 Q55,9 111,12 Q167,15 222,12 Q277,9 333,12 Q389,15 449,12"
-            fill="none" stroke="#9b7020" stroke-width="2.2" stroke-linecap="round"/>
+ <!-- ═══════ PAPEL PICADO (tonos azules) ═══════ -->
+ <div class="picado-wrap" aria-hidden="true">
+ <svg class="picado-svg" viewBox="0 0 444 130" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+ <stop offset="0%" stop-color="rgba(23,58,120,.12)"/>
+ <stop offset="100%" stop-color="rgba(23,58,120,0)"/>
+ </linearGradient>
+ <!-- motivos recortados -->
+ <g id="m-cruz" fill="#faf7f0">
+ <rect x="-3" y="-13" width="6" height="26" rx="1.5"/>
+ <rect x="-9" y="-6" width="18" height="6" rx="1.5"/>
+ </g>
+ <g id="m-flor" fill="#faf7f0">
+ <ellipse rx="3.8" ry="9" transform="rotate(0)"/><ellipse rx="3.8" ry="9" transform="rotate(60)"/>
+ <ellipse rx="3.8" ry="9" transform="rotate(120)"/><ellipse rx="3.8" ry="9" transform="rotate(180)"/>
+ <ellipse rx="3.8" ry="9" transform="rotate(240)"/><ellipse rx="3.8" ry="9" transform="rotate(300)"/>
+ <circle r="5.5"/>
+ </g>
+ <g id="m-sol">
+ <circle r="6.5" fill="#faf7f0"/>
+ <g stroke="#faf7f0" stroke-width="2.4" stroke-linecap="round">
+ <line y1="-9.5" y2="-13.5"/><line y1="9.5" y2="13.5"/>
+ <line x1="-9.5" x2="-13.5"/><line x1="9.5" x2="13.5"/>
+ <line x1="-6.8" y1="-6.8" x2="-9.6" y2="-9.6"/><line x1="6.8" y1="6.8" x2="9.6" y2="9.6"/>
+ <line x1="-6.8" y1="6.8" x2="-9.6" y2="9.6"/><line x1="6.8" y1="-6.8" x2="9.6" y2="-9.6"/>
+ </g>
+ </g>
+ <path id="m-paloma" d="M-10,2 C-9,-4 -3,-7 3,-5 C6,-8 10,-8 11,-6 C9,-5 8,-3 8,-1 C8,4 2,8 -4,7 L-7,11 L-7,6 C-9,5 -10,4 -10,2 Z" fill="#faf7f0"/>
+ <polygon id="m-estrella" points="0,-12 2.8,-3.7 11.4,-3.7 4.4,1.4 7.1,9.7 0,4.6 -7.1,9.7 -4.4,1.4 -11.4,-3.7 -2.8,-3.7" fill="#faf7f0"/>
+ <g id="m-puntos" fill="#faf7f0">
+ <circle cx="-11" r="3.2"/><circle cy="5" r="3.2"/><circle cx="11" r="3.2"/>
+ </g>
+ </defs>
 
-      <!-- FLAG 1 · Rose · Cross -->
-      <g transform="translate(2,0) rotate(-1.2,20,12)">
-        <path d="M0,12 L40,12 L40,88 L20,110 L0,88Z" fill="#d47888"/>
-        <rect x="17" y="26" width="6" height="26" fill="#fdf5e0"/>
-        <rect x="11" y="33" width="18" height="6" fill="#fdf5e0"/>
-        <circle cx="9"  cy="76" r="3.5" fill="#fdf5e0"/>
-        <circle cx="20" cy="81" r="3.5" fill="#fdf5e0"/>
-        <circle cx="31" cy="76" r="3.5" fill="#fdf5e0"/>
-      </g>
+ <rect x="0" y="6" width="444" height="30" fill="url(#sg)"/>
+ <path d="M-5,12 Q55,9 111,12 Q167,15 222,12 Q277,9 333,12 Q389,15 449,12"
+ fill="none" stroke="#173a78" stroke-width="2.2" stroke-linecap="round"/>
 
-      <!-- FLAG 2 · Sky Blue · 6-petal flower -->
-      <g transform="translate(46,0) rotate(1.5,20,12)">
-        <path d="M0,12 L40,12 L40,91 L20,112 L0,91Z" fill="#7ab4cc"/>
-        <g transform="translate(20,46)" fill="#fdf5e0">
-          <ellipse rx="4" ry="9.5" transform="rotate(0)"/>
-          <ellipse rx="4" ry="9.5" transform="rotate(60)"/>
-          <ellipse rx="4" ry="9.5" transform="rotate(120)"/>
-          <ellipse rx="4" ry="9.5" transform="rotate(180)"/>
-          <ellipse rx="4" ry="9.5" transform="rotate(240)"/>
-          <ellipse rx="4" ry="9.5" transform="rotate(300)"/>
-          <circle r="6"/>
-        </g>
-        <circle cx="9"  cy="79" r="3" fill="#fdf5e0"/>
-        <circle cx="20" cy="84" r="3" fill="#fdf5e0"/>
-        <circle cx="31" cy="79" r="3" fill="#fdf5e0"/>
-      </g>
+ <g class="flag" transform="translate(2,0)">
+ <path d="M0,12 L40,12 L40,88 L20,109 L0,88Z" fill="#173a78"/>
+ <use href="#m-cruz" x="20" y="42"/><use href="#m-puntos" x="20" y="76"/>
+ </g>
+ <g class="flag" transform="translate(46,0)">
+ <path d="M0,12 L40,12 L40,91 L20,112 L0,91Z" fill="#3f74c2"/>
+ <use href="#m-flor" x="20" y="46"/><use href="#m-puntos" x="20" y="80"/>
+ </g>
+ <g class="flag" transform="translate(90,0)">
+ <path d="M0,12 L40,12 L40,86 L20,107 L0,86Z" fill="#8fb2e0"/>
+ <use href="#m-estrella" x="20" y="44"/><use href="#m-puntos" x="20" y="74"/>
+ </g>
+ <g class="flag" transform="translate(134,0)">
+ <path d="M0,12 L40,12 L40,89 L20,110 L0,89Z" fill="#24509e"/>
+ <use href="#m-paloma" x="20" y="44"/><use href="#m-puntos" x="20" y="77"/>
+ </g>
+ <g class="flag" transform="translate(178,0)">
+ <path d="M0,12 L40,12 L40,87 L20,108 L0,87Z" fill="#5d8ed2"/>
+ <use href="#m-sol" x="20" y="44"/><use href="#m-puntos" x="20" y="76"/>
+ </g>
+ <g class="flag" transform="translate(222,0)">
+ <path d="M0,12 L40,12 L40,90 L20,111 L0,90Z" fill="#173a78"/>
+ <use href="#m-flor" x="20" y="46"/><use href="#m-puntos" x="20" y="79"/>
+ </g>
+ <g class="flag" transform="translate(266,0)">
+ <path d="M0,12 L40,12 L40,86 L20,107 L0,86Z" fill="#3f74c2"/>
+ <use href="#m-cruz" x="20" y="42"/><use href="#m-puntos" x="20" y="74"/>
+ </g>
+ <g class="flag" transform="translate(310,0)">
+ <path d="M0,12 L40,12 L40,89 L20,110 L0,89Z" fill="#8fb2e0"/>
+ <use href="#m-paloma" x="20" y="44"/><use href="#m-puntos" x="20" y="77"/>
+ </g>
+ <g class="flag" transform="translate(354,0)">
+ <path d="M0,12 L40,12 L40,87 L20,108 L0,87Z" fill="#24509e"/>
+ <use href="#m-estrella" x="20" y="44"/><use href="#m-puntos" x="20" y="75"/>
+ </g>
+ <g class="flag" transform="translate(398,0)">
+ <path d="M0,12 L40,12 L40,91 L20,112 L0,91Z" fill="#5d8ed2"/>
+ <use href="#m-sol" x="20" y="44"/><use href="#m-puntos" x="20" y="80"/>
+ </g>
+ </svg>
+ </div>
 
-      <!-- FLAG 3 · Amber · Star -->
-      <g transform="translate(90,0) rotate(-.5,20,12)">
-        <path d="M0,12 L40,12 L40,86 L20,107 L0,86Z" fill="#e8b030"/>
-        <polygon points="20,26 23,35 32,35 25,41 28,50 20,44 12,50 15,41 8,35 17,35" fill="#fdf5e0"/>
-        <circle cx="9"  cy="74" r="3.5" fill="#fdf5e0"/>
-        <circle cx="20" cy="79" r="3.5" fill="#fdf5e0"/>
-        <circle cx="31" cy="74" r="3.5" fill="#fdf5e0"/>
-      </g>
+ <!-- ═══════ HERO · MARCO TROQUELADO ═══════ -->
+ <div class="hero">
+ <div class="marco">
+ <svg class="marco-svg" viewBox="0 0 360 470" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+ <defs>
+ <g id="florecita" fill="#24509e">
+ <ellipse rx="2.2" ry="5" transform="rotate(0)"/><ellipse rx="2.2" ry="5" transform="rotate(60)"/>
+ <ellipse rx="2.2" ry="5" transform="rotate(120)"/>
+ <circle r="2.6" fill="#8fb2e0"/>
+ </g>
+ </defs>
 
-      <!-- FLAG 4 · Sage · Diamond ring -->
-      <g transform="translate(134,0) rotate(2,20,12)">
-        <path d="M0,12 L40,12 L40,89 L20,110 L0,89Z" fill="#7aaa6a"/>
-        <polygon points="20,25 34,47 20,69 6,47" fill="#fdf5e0"/>
-        <circle cx="20" cy="47" r="7" fill="#7aaa6a"/>
-        <circle cx="9"  cy="78" r="3" fill="#fdf5e0"/>
-        <circle cx="20" cy="83" r="3" fill="#fdf5e0"/>
-        <circle cx="31" cy="78" r="3" fill="#fdf5e0"/>
-      </g>
+ <!-- borde exterior festoneado -->
+ <path fill="none" stroke="#24509e" stroke-width="2.5" stroke-linecap="round" d="
+ M14,38
+ Q14,14 38,14
+ L66,14 Q73,5 80,14 L108,14 Q115,5 122,14 L150,14 Q157,5 164,14 L192,14 Q199,5 206,14 L234,14 Q241,5 248,14 L276,14 Q283,5 290,14 L318,14
+ Q346,14 346,38
+ L346,66 Q355,73 346,80 L346,108 Q355,115 346,122 L346,150 Q355,157 346,164 L346,192 Q355,199 346,206 L346,234 Q355,241 346,248 L346,276 Q355,283 346,290 L346,318 Q355,325 346,332 L346,360 Q355,367 346,374 L346,402 Q355,409 346,416 L346,432
+ Q346,456 322,456
+ L294,456 Q287,465 280,456 L252,456 Q245,465 238,456 L210,456 Q203,465 196,456 L168,456 Q161,465 154,456 L126,456 Q119,465 112,456 L84,456 Q77,465 70,456 L38,456
+ Q14,456 14,432
+ L14,416 Q5,409 14,402 L14,374 Q5,367 14,360 L14,332 Q5,325 14,318 L14,290 Q5,283 14,276 L14,248 Q5,241 14,234 L14,206 Q5,199 14,192 L14,164 Q5,157 14,150 L14,122 Q5,115 14,108 L14,80 Q5,73 14,66 Z"/>
 
-      <!-- FLAG 5 · Lilac · Cross -->
-      <g transform="translate(178,0) rotate(-1.8,20,12)">
-        <path d="M0,12 L40,12 L40,87 L20,108 L0,87Z" fill="#b080cc"/>
-        <rect x="17" y="26" width="6" height="26" fill="#fdf5e0"/>
-        <rect x="11" y="33" width="18" height="6" fill="#fdf5e0"/>
-        <circle cx="9"  cy="75" r="3.5" fill="#fdf5e0"/>
-        <circle cx="20" cy="80" r="3.5" fill="#fdf5e0"/>
-        <circle cx="31" cy="75" r="3.5" fill="#fdf5e0"/>
-      </g>
+ <!-- puntilla siguiendo el festón -->
+ <g fill="#8fb2e0">
+ <circle cx="73" cy="9" r="1.8"/><circle cx="115" cy="9" r="1.8"/><circle cx="157" cy="9" r="1.8"/>
+ <circle cx="199" cy="9" r="1.8"/><circle cx="241" cy="9" r="1.8"/><circle cx="283" cy="9" r="1.8"/>
+ <circle cx="351" cy="73" r="1.8"/><circle cx="351" cy="115" r="1.8"/><circle cx="351" cy="157" r="1.8"/>
+ <circle cx="351" cy="199" r="1.8"/><circle cx="351" cy="241" r="1.8"/><circle cx="351" cy="283" r="1.8"/>
+ <circle cx="351" cy="325" r="1.8"/><circle cx="351" cy="367" r="1.8"/><circle cx="351" cy="409" r="1.8"/>
+ <circle cx="287" cy="461" r="1.8"/><circle cx="245" cy="461" r="1.8"/><circle cx="203" cy="461" r="1.8"/>
+ <circle cx="161" cy="461" r="1.8"/><circle cx="119" cy="461" r="1.8"/><circle cx="77" cy="461" r="1.8"/>
+ <circle cx="9" cy="409" r="1.8"/><circle cx="9" cy="367" r="1.8"/><circle cx="9" cy="325" r="1.8"/>
+ <circle cx="9" cy="283" r="1.8"/><circle cx="9" cy="241" r="1.8"/><circle cx="9" cy="199" r="1.8"/>
+ <circle cx="9" cy="157" r="1.8"/><circle cx="9" cy="115" r="1.8"/><circle cx="9" cy="73" r="1.8"/>
+ </g>
 
-      <!-- FLAG 6 · Terracotta · Flower -->
-      <g transform="translate(222,0) rotate(1,20,12)">
-        <path d="M0,12 L40,12 L40,90 L20,111 L0,90Z" fill="#cc7060"/>
-        <g transform="translate(20,46)" fill="#fdf5e0">
-          <ellipse rx="4" ry="9.5" transform="rotate(0)"/>
-          <ellipse rx="4" ry="9.5" transform="rotate(60)"/>
-          <ellipse rx="4" ry="9.5" transform="rotate(120)"/>
-          <ellipse rx="4" ry="9.5" transform="rotate(180)"/>
-          <ellipse rx="4" ry="9.5" transform="rotate(240)"/>
-          <ellipse rx="4" ry="9.5" transform="rotate(300)"/>
-          <circle r="6"/>
-        </g>
-        <circle cx="9"  cy="78" r="3" fill="#fdf5e0"/>
-        <circle cx="20" cy="83" r="3" fill="#fdf5e0"/>
-        <circle cx="31" cy="78" r="3" fill="#fdf5e0"/>
-      </g>
+ <!-- línea interior punteada -->
+ <rect x="26" y="26" width="308" height="418" rx="14" fill="none" stroke="#8fb2e0" stroke-width="1" stroke-dasharray="1 5" stroke-linecap="round"/>
 
-      <!-- FLAG 7 · Rose · Star -->
-      <g transform="translate(266,0) rotate(-1.5,20,12)">
-        <path d="M0,12 L40,12 L40,86 L20,107 L0,86Z" fill="#d47888"/>
-        <polygon points="20,26 23,35 32,35 25,41 28,50 20,44 12,50 15,41 8,35 17,35" fill="#fdf5e0"/>
-        <circle cx="9"  cy="74" r="3.5" fill="#fdf5e0"/>
-        <circle cx="20" cy="79" r="3.5" fill="#fdf5e0"/>
-        <circle cx="31" cy="74" r="3.5" fill="#fdf5e0"/>
-      </g>
+ <!-- arco interior superior -->
+ <path d="M56,152 L56,118 Q56,52 180,48 Q304,52 304,118 L304,152"
+ fill="none" stroke="#24509e" stroke-width="1.8" stroke-linecap="round"/>
+ <path d="M62,152 L62,120 Q62,58 180,54 Q298,58 298,120 L298,152"
+ fill="none" stroke="#8fb2e0" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round"/>
 
-      <!-- FLAG 8 · Blue · Cross -->
-      <g transform="translate(310,0) rotate(.8,20,12)">
-        <path d="M0,12 L40,12 L40,89 L20,110 L0,89Z" fill="#7ab4cc"/>
-        <rect x="17" y="26" width="6" height="26" fill="#fdf5e0"/>
-        <rect x="11" y="33" width="18" height="6" fill="#fdf5e0"/>
-        <circle cx="9"  cy="77" r="3.5" fill="#fdf5e0"/>
-        <circle cx="20" cy="82" r="3.5" fill="#fdf5e0"/>
-        <circle cx="31" cy="77" r="3.5" fill="#fdf5e0"/>
-      </g>
+ <!-- ramos laterales -->
+ <g transform="translate(72,170)"><use href="#florecita"/></g>
+ <g transform="translate(288,170)"><use href="#florecita"/></g>
+ <g stroke="#3f74c2" stroke-width="1.5" fill="none" stroke-linecap="round">
+ <path d="M72,178 C68,198 76,212 72,230"/>
+ <path d="M288,178 C292,198 284,212 288,230"/>
+ </g>
+ <g fill="#8fb2e0">
+ <circle cx="66" cy="196" r="2"/><circle cx="78" cy="210" r="2"/><circle cx="68" cy="224" r="2"/>
+ <circle cx="294" cy="196" r="2"/><circle cx="282" cy="210" r="2"/><circle cx="292" cy="224" r="2"/>
+ </g>
 
-      <!-- FLAG 9 · Amber · Diamond ring -->
-      <g transform="translate(354,0) rotate(-.8,20,12)">
-        <path d="M0,12 L40,12 L40,87 L20,108 L0,87Z" fill="#e8b030"/>
-        <polygon points="20,25 34,47 20,69 6,47" fill="#fdf5e0"/>
-        <circle cx="20" cy="47" r="7" fill="#e8b030"/>
-        <circle cx="9"  cy="75" r="3" fill="#fdf5e0"/>
-        <circle cx="20" cy="80" r="3" fill="#fdf5e0"/>
-        <circle cx="31" cy="75" r="3" fill="#fdf5e0"/>
-      </g>
+ <!-- guirnalda inferior -->
+ <g transform="translate(180,424)">
+ <use href="#florecita"/>
+ <g stroke="#3f74c2" stroke-width="1.4" fill="none" stroke-linecap="round">
+ <path d="M-10,2 C-26,8 -44,6 -58,0"/>
+ <path d="M10,2 C26,8 44,6 58,0"/>
+ </g>
+ <circle cx="-64" cy="-1" r="2" fill="#8fb2e0"/>
+ <circle cx="64" cy="-1" r="2" fill="#8fb2e0"/>
+ <g transform="translate(-78,-2) scale(.7)"><use href="#florecita"/></g>
+ <g transform="translate(78,-2) scale(.7)"><use href="#florecita"/></g>
+ </g>
+ </svg>
 
-      <!-- FLAG 10 · Sage · Flower -->
-      <g transform="translate(398,0) rotate(1.8,20,12)">
-        <path d="M0,12 L40,12 L40,91 L20,112 L0,91Z" fill="#7aaa6a"/>
-        <g transform="translate(20,46)" fill="#fdf5e0">
-          <ellipse rx="4" ry="9.5" transform="rotate(0)"/>
-          <ellipse rx="4" ry="9.5" transform="rotate(60)"/>
-          <ellipse rx="4" ry="9.5" transform="rotate(120)"/>
-          <ellipse rx="4" ry="9.5" transform="rotate(180)"/>
-          <ellipse rx="4" ry="9.5" transform="rotate(240)"/>
-          <ellipse rx="4" ry="9.5" transform="rotate(300)"/>
-          <circle r="6"/>
-        </g>
-        <circle cx="9"  cy="79" r="3" fill="#fdf5e0"/>
-        <circle cx="20" cy="84" r="3" fill="#fdf5e0"/>
-        <circle cx="31" cy="79" r="3" fill="#fdf5e0"/>
-      </g>
-    </svg>
-  </div>
-  <div class="picado-shadow"></div>
+ <!-- texto del hero -->
+ <div class="hero-text">
+ <p class="eyebrow">Con la bendición de Dios,<br>te invitamos a mi bautizo</p>
+ <h1 class="name">Elías</h1>
+ <p class="father">Franco Salazar</p>
+ <div class="hero-date">
+ <span class="hd-side">Sábado</span>
+ <span class="hd-num">18</span>
+ <span class="hd-side">Julio</span>
+ </div>
+ <p class="hd-year">2 0 2 6</p>
+ <p class="save">Aparta la fecha</p>
+ </div>
+ </div>
+ </div>
 
-  <!-- CONTENT -->
-  <div class="content">
+ <!-- ═══════ CONTENIDO ═══════ -->
+ <div class="content">
 
-    <!-- Top marigold ornament -->
-    <div class="orn-row">
-      <div class="orn-line"></div>
-      <svg width="68" height="30" viewBox="-34 -15 68 30">
-        <g fill="#e8b030">
-          <g transform="translate(-22,0)">
-            <ellipse rx="3" ry="6.5" transform="rotate(0)"/><ellipse rx="3" ry="6.5" transform="rotate(60)"/>
-            <ellipse rx="3" ry="6.5" transform="rotate(120)"/><circle r="4.5" fill="#b87010"/>
-          </g>
-          <g>
-            <ellipse rx="3.5" ry="7.5" transform="rotate(0)"/><ellipse rx="3.5" ry="7.5" transform="rotate(45)"/>
-            <ellipse rx="3.5" ry="7.5" transform="rotate(90)"/><ellipse rx="3.5" ry="7.5" transform="rotate(135)"/>
-            <circle r="5.5" fill="#b87010"/>
-          </g>
-          <g transform="translate(22,0)">
-            <ellipse rx="3" ry="6.5" transform="rotate(0)"/><ellipse rx="3" ry="6.5" transform="rotate(60)"/>
-            <ellipse rx="3" ry="6.5" transform="rotate(120)"/><circle r="4.5" fill="#b87010"/>
-          </g>
-        </g>
-        <g fill="#7aaa6a" opacity=".75">
-          <ellipse cx="-11" cy="1" rx="2.5" ry="6" transform="rotate(-38,-11,1)"/>
-          <ellipse cx="11" cy="1" rx="2.5" ry="6" transform="rotate(38,11,1)"/>
-        </g>
-      </svg>
-      <div class="orn-line r"></div>
-    </div>
+ <!-- COUNTDOWN -->
+ <div class="rv">
+ <p class="sec-eye">Faltan</p>
+ <div class="cd-row" role="timer" aria-label="Cuenta regresiva al bautizo">
+ <div class="cd-unit"><span class="cd-num" id="d">--</span><span class="cd-lbl">Días</span></div>
+ <div class="cd-unit"><span class="cd-num" id="h">--</span><span class="cd-lbl">Horas</span></div>
+ <div class="cd-unit"><span class="cd-num" id="m">--</span><span class="cd-lbl">Min</span></div>
+ <div class="cd-unit"><span class="cd-num" id="s">--</span><span class="cd-lbl">Seg</span></div>
+ </div>
+ </div>
 
-    <!-- Cross -->
-    <svg class="cross-svg" viewBox="0 0 34 46">
-      <rect x="14" y="2" width="6" height="42" rx="2"/>
-      <rect x="3" y="12" width="28" height="6" rx="2"/>
-      <circle cx="17" cy="2"  r="3" fill="var(--gold)"/>
-      <circle cx="17" cy="44" r="3" fill="var(--gold)"/>
-      <circle cx="3"  cy="15" r="3" fill="var(--gold)"/>
-      <circle cx="31" cy="15" r="3" fill="var(--gold)"/>
-    </svg>
+ <!-- DETALLES -->
+ <div class="rv">
+ <p class="sec-eye">El gran día</p>
+ <div class="card">
+ <div class="dr">
+ <div class="dr-icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M12 2v4M9 4h6"/>
+ <path d="M5 22V12l7-5 7 5v10"/>
+ <path d="M9 22v-5a3 3 0 0 1 6 0v5"/>
+ </svg>
+ </div>
+ <div><p class="dr-key">Misa de bautizo</p><p class="dr-val ph" id="lugar-misa">Por confirmar</p></div>
+ </div>
+ <div class="dr">
+ <div class="dr-icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
+ <circle cx="12" cy="12" r="9"/>
+ <path d="M12 7v5l3.5 2"/>
+ </svg>
+ </div>
+ <div><p class="dr-key">Hora</p><p class="dr-val">12:00 p.m. · Mediodía</p></div>
+ </div>
+ <div class="dr">
+ <div class="dr-icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M8 21h8M12 17v4M5 4h14l-1.5 7a5.5 5.5 0 0 1-11 0L5 4Z"/>
+ <path d="M5 6H3a3 3 0 0 0 3 5M19 6h2a3 3 0 0 1-3 5"/>
+ </svg>
+ </div>
+ <div><p class="dr-key">Celebración</p><p class="dr-val ph" id="lugar-fiesta">Por confirmar</p></div>
+ </div>
+ </div>
+ <div class="btn-row" style="margin-top:.8rem">
+ <a class="btn btn-linea btn-sm" id="btn-gcal" target="_blank" rel="noopener" href="#">
+ <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+ Google Calendar
+ </a>
+ <button class="btn btn-linea btn-sm" id="btn-ics" type="button">
+ <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+ iPhone / Outlook
+ </button>
+ </div>
+ </div>
 
-    <p class="eyebrow">Mi Bautizo</p>
+ <!-- MESA DE REGALOS -->
+ <div class="rv">
+ <p class="sec-eye">Mesa de regalos</p>
+ <div class="regalo">
+ <p class="regalo-title">Tu compañía es nuestro mejor regalo,<br>pero si deseas obsequiarle algo a Elías:</p>
+ <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/52021657" target="_blank" rel="noopener" class="btn btn-azul">
+ Ver lista en Liverpool
+ </a>
+ </div>
+ </div>
 
-    <!-- Name -->
-    <h1 class="name">Elías</h1>
+ <!-- RSVP -->
+ <div class="rv">
+ <p class="sec-eye">Confirmación</p>
+ <div id="cta-wrap">
+ <button class="btn btn-azul" onclick="showRsvp()" type="button">
+ ✉ &nbsp;Confirmar asistencia
+ </button>
+ </div>
 
-    <!-- Dove -->
-    <div style="margin:-.1rem 0 .25rem">
-      <svg width="42" height="30" viewBox="0 0 64 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M44 9C40 4 30 2 22 7L14 11C10 9 4 11 2 17L0 23C-1 29 4 34 10 35L16 37L14 44L22 40L24 34L32 32C40 29 46 22 44 14Z" fill="#a8d0e8" opacity=".85"/>
-        <path d="M22 7C26 3 36 1 44 9" stroke="#7ab4cc" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-        <circle cx="8" cy="20" r="2" fill="#7ab4cc"/>
-        <path d="M24 34L28 44L32 38" stroke="#7ab4cc" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
+ <div class="rsvp-form" id="rsvp-form">
+ <p class="form-ttl">Confirmar asistencia</p>
+ <div class="form-grp">
+ <label class="form-lbl" for="f-nombre">Nombre o familia</label>
+ <input type="text" id="f-nombre" class="form-inp" placeholder="Ej. Familia García" autocomplete="name" maxlength="80"/>
+ </div>
+ <div class="form-grp">
+ <span class="form-lbl" id="lbl-personas">¿Cuántas personas asisten?</span>
+ <div class="stepper" role="group" aria-labelledby="lbl-personas">
+ <button class="step-btn" type="button" aria-label="Quitar una persona" onclick="stepPersonas(-1)">−</button>
+ <span class="step-val" id="f-personas" aria-live="polite">1</span>
+ <button class="step-btn" type="button" aria-label="Agregar una persona" onclick="stepPersonas(1)">+</button>
+ <span class="step-note" id="step-note">persona</span>
+ </div>
+ </div>
+ <div class="form-grp">
+ <span class="form-lbl">Invitados de parte de</span>
+ <div class="radio-grp">
+ <label class="radio-opt">
+ <input type="radio" name="lado" value="materna" checked/>
+ <span class="radio-pill">Mamá · Materna</span>
+ </label>
+ <label class="radio-opt">
+ <input type="radio" name="lado" value="paterna"/>
+ <span class="radio-pill">Papá · Paterna</span>
+ </label>
+ </div>
+ </div>
+ <button class="btn btn-azul submit-btn" id="submit-btn" onclick="submitRsvp()" type="button">Confirmar asistencia ✓</button>
+ <p class="form-err" id="form-err">Hubo un error al enviar. Revisa tu conexión e intenta de nuevo.</p>
+ </div>
 
-    <p class="father">Franco Salazar</p>
+ <!-- SUCCESS -->
+ <div class="success-msg" id="success-msg" aria-live="polite">
+ <svg width="52" height="40" viewBox="-2 -2 66 48" aria-hidden="true">
+ <path d="M44 9C40 4 30 2 22 7L14 11C10 9 4 11 2 17L0 23C-1 29 4 34 10 35L16 37L14 44L22 40L24 34L32 32C40 29 46 22 44 14Z" fill="#8fb2e0" opacity=".9"/>
+ <path d="M22 7C26 3 36 1 44 9" stroke="#24509e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+ <circle cx="8" cy="20" r="2" fill="#24509e"/>
+ </svg>
+ <p class="success-ttl">¡Gracias!</p>
+ <p class="success-sub">
+ <span id="success-detail">Tu asistencia ha sido confirmada.</span><br>
+ ¡Los esperamos con mucho cariño!
+ </p>
+ <div class="btn-row" style="margin-top:1rem">
+ <a class="btn btn-linea btn-sm" id="btn-gcal-2" target="_blank" rel="noopener" href="#">Agregar al calendario</a>
+ </div>
+ </div>
+ </div>
 
-    <!-- Divider -->
-    <div class="orn-row">
-      <div class="orn-line"></div>
-      <svg width="18" height="18" viewBox="-9 -9 18 18">
-        <circle r="2.5" fill="#c8921a"/>
-        <circle cy="-6" r="1.8" fill="#e8b030"/>
-        <circle cy="6"  r="1.8" fill="#e8b030"/>
-        <circle cx="-6" r="1.8" fill="#e8b030"/>
-        <circle cx="6"  r="1.8" fill="#e8b030"/>
-      </svg>
-      <div class="orn-line r"></div>
-    </div>
+ <!-- COMPARTIR -->
+ <div class="rv" style="margin-top:1.4rem">
+ <button class="btn btn-linea btn-sm" id="btn-share" type="button">
+ <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.6 10.7l6.8-3.4M8.6 13.3l6.8 3.4"/></svg>
+ Compartir invitación
+ </button>
+ </div>
+ </div>
 
-    <!-- Date -->
-    <div class="date-row">
-      <span class="date-day">Sábado</span>
-      <div class="date-dot"></div>
-      <span class="date-num">18</span>
-      <div class="date-dot"></div>
-      <span class="date-month">Julio</span>
-    </div>
-    <p class="date-year">· 2026 ·</p>
-
-    <p class="save">Aparta la fecha</p>
-
-    <!-- Details -->
-    <div class="card">
-      <div class="dr">
-        <span class="dr-icon">⛪</span>
-        <div><p class="dr-key">Misa de Bautizo</p><p class="dr-val ph">Por confirmar</p></div>
-      </div>
-      <div class="dr">
-        <span class="dr-icon">🕐</span>
-        <div><p class="dr-key">Hora</p><p class="dr-val">12:00 p.m. · Mediodía</p></div>
-      </div>
-      <div class="dr">
-        <span class="dr-icon">🎉</span>
-        <div><p class="dr-key">Celebración</p><p class="dr-val ph">Por confirmar</p></div>
-      </div>
-    </div>
-
-    <!-- Countdown -->
-    <p class="cd-label">Faltan...</p>
-    <div class="cd-row">
-      <div class="cd-unit"><span class="cd-num" id="d">39</span><span class="cd-lbl">Días</span></div>
-      <div class="cd-unit"><span class="cd-num" id="h">--</span><span class="cd-lbl">Horas</span></div>
-      <div class="cd-unit"><span class="cd-num" id="m">--</span><span class="cd-lbl">Min</span></div>
-      <div class="cd-unit"><span class="cd-num" id="s">--</span><span class="cd-lbl">Seg</span></div>
-    </div>
-
-    <!-- MESA DE REGALOS -->
-    <div class="regalo-section">
-      <p class="regalo-eye">🎁 Mesa de regalos</p>
-      <p class="regalo-title">¿Nos quieres regalar algo?</p>
-      <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/52021657" target="_blank" rel="noopener" class="gift-btn">
-        Ver lista en Liverpool →
-      </a>
-    </div>
-
-    <!-- CTA -->
-    <div style="text-align:center" id="cta-wrap">
-      <button class="cta" onclick="showRsvp()" style="border:none;cursor:pointer">
-        ✉ Confirmar asistencia
-      </button>
-    </div>
-
-    <!-- RSVP FORM -->
-    <div class="rsvp-form" id="rsvp-form" style="display:none">
-      <p class="form-ttl">Confirmar asistencia</p>
-      <div class="form-grp">
-        <label class="form-lbl">Nombre o familia</label>
-        <input type="text" id="f-nombre" class="form-inp" placeholder="Ej. Familia García" autocomplete="name"/>
-      </div>
-      <div class="form-grp">
-        <label class="form-lbl">¿Cuántas personas confirman?</label>
-        <input type="number" id="f-personas" class="form-inp" min="1" max="30" value="1"/>
-      </div>
-      <div class="form-grp">
-        <label class="form-lbl">Invitados de parte de</label>
-        <div class="radio-grp">
-          <label class="radio-opt"><input type="radio" name="lado" value="materna" checked/> Mamá (Materna)</label>
-          <label class="radio-opt"><input type="radio" name="lado" value="paterna"/> Papá (Paterna)</label>
-        </div>
-      </div>
-      <button class="submit-btn" id="submit-btn" onclick="submitRsvp()">Confirmar asistencia ✓</button>
-    </div>
-
-    <!-- SUCCESS -->
-    <div class="success-msg" id="success-msg" style="display:none">
-      <div class="success-icon">🕊️</div>
-      <p class="success-ttl">¡Gracias!</p>
-      <p class="success-sub">Tu asistencia ha sido confirmada.<br>¡Los esperamos con mucho cariño!</p>
-    </div>
-  </div>
-
-  <!-- Bottom marigold row -->
-  <div style="text-align:center;padding:0 0 .75rem">
-    <svg width="200" height="38" viewBox="-100 -19 200 38" opacity=".65">
-      <g fill="#e8b030">
-        <g transform="translate(-70,0)">
-          <ellipse rx="2.5" ry="5.5" transform="rotate(0)"/><ellipse rx="2.5" ry="5.5" transform="rotate(60)"/>
-          <ellipse rx="2.5" ry="5.5" transform="rotate(120)"/><circle r="3.8" fill="#b87010"/>
-        </g>
-        <g transform="translate(-38,0)">
-          <ellipse rx="3" ry="6.5" transform="rotate(0)"/><ellipse rx="3" ry="6.5" transform="rotate(45)"/>
-          <ellipse rx="3" ry="6.5" transform="rotate(90)"/><ellipse rx="3" ry="6.5" transform="rotate(135)"/>
-          <circle r="4.5" fill="#b87010"/>
-        </g>
-        <g>
-          <ellipse rx="3.5" ry="8" transform="rotate(0)"/><ellipse rx="3.5" ry="8" transform="rotate(45)"/>
-          <ellipse rx="3.5" ry="8" transform="rotate(90)"/><ellipse rx="3.5" ry="8" transform="rotate(135)"/>
-          <circle r="5.5" fill="#b87010"/>
-        </g>
-        <g transform="translate(38,0)">
-          <ellipse rx="3" ry="6.5" transform="rotate(0)"/><ellipse rx="3" ry="6.5" transform="rotate(45)"/>
-          <ellipse rx="3" ry="6.5" transform="rotate(90)"/><ellipse rx="3" ry="6.5" transform="rotate(135)"/>
-          <circle r="4.5" fill="#b87010"/>
-        </g>
-        <g transform="translate(70,0)">
-          <ellipse rx="2.5" ry="5.5" transform="rotate(0)"/><ellipse rx="2.5" ry="5.5" transform="rotate(60)"/>
-          <ellipse rx="2.5" ry="5.5" transform="rotate(120)"/><circle r="3.8" fill="#b87010"/>
-        </g>
-      </g>
-      <g fill="#7aaa6a" opacity=".8">
-        <ellipse cx="-52" cy="1" rx="2.5" ry="7" transform="rotate(-38,-52,1)"/>
-        <ellipse cx="-20" cy="1" rx="2.5" ry="7" transform="rotate(35,-20,1)"/>
-        <ellipse cx="20"  cy="1" rx="2.5" ry="7" transform="rotate(-35,20,1)"/>
-        <ellipse cx="52"  cy="1" rx="2.5" ry="7" transform="rotate(38,52,1)"/>
-      </g>
-    </svg>
-  </div>
-
-  <p class="footer">✦ Con amor · La familia Salazar ✦</p>
+ <!-- FOOTER -->
+ <p class="footer rv">
+ <svg class="footer-orn" width="120" height="22" viewBox="-60 -11 120 22" aria-hidden="true">
+ <g fill="#3f74c2">
+ <g transform="translate(-34,0)" opacity=".7"><ellipse rx="2" ry="4.5"/><ellipse rx="2" ry="4.5" transform="rotate(60)"/><ellipse rx="2" ry="4.5" transform="rotate(120)"/><circle r="2.6" fill="#8fb2e0"/></g>
+ <g><ellipse rx="2.6" ry="6"/><ellipse rx="2.6" ry="6" transform="rotate(45)"/><ellipse rx="2.6" ry="6" transform="rotate(90)"/><ellipse rx="2.6" ry="6" transform="rotate(135)"/><circle r="3.4" fill="#8fb2e0"/></g>
+ <g transform="translate(34,0)" opacity=".7"><ellipse rx="2" ry="4.5"/><ellipse rx="2" ry="4.5" transform="rotate(60)"/><ellipse rx="2" ry="4.5" transform="rotate(120)"/><circle r="2.6" fill="#8fb2e0"/></g>
+ </g>
+ </svg>
+ Con amor · La familia Salazar
+ </p>
 </div>
 
 <script>
-  const EV=new Date('2026-07-18T12:00:00');
-  const pad=n=>String(n).padStart(2,'0');
-  function tick(){
-    const t=EV-Date.now();if(t<=0)return;
-    document.getElementById('d').textContent=pad(Math.floor(t/864e5));
-    document.getElementById('h').textContent=pad(Math.floor(t%864e5/36e5));
-    document.getElementById('m').textContent=pad(Math.floor(t%36e5/6e4));
-    document.getElementById('s').textContent=pad(Math.floor(t%6e4/1e3));
-  }
-  tick();setInterval(tick,1000);
+ /* ───────── CONFIG DEL EVENTO ───────── */
+ const EVENTO = {
+ titulo: 'Bautizo de Elías',
+ inicio: '2026-07-18T12:00:00',
+ fin: '2026-07-18T17:00:00',
+ tz: 'America/Mexico_City',
+ lugar: '', // llenar cuando se confirme
+ desc: 'Te esperamos para celebrar el bautizo de Elías. Invitación: https://invitacion.frasalenergy.com'
+ };
+ const EV = new Date(EVENTO.inicio);
 
-  const SUPA='https://ewkosyqwtmrwmzkdqadd.supabase.co';
-  const KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV3a29zeXF3dG1yd216a2RxYWRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxNjUwNzcsImV4cCI6MjA5MDc0MTA3N30.2QgHzrIXwDc9PpezfkM13roY86F0NDk4hqvhNKOJ2os';
+ /* ───────── COUNTDOWN ───────── */
+ const pad = n => String(n).padStart(2,'0');
+ const cdEls = {d:document.getElementById('d'),h:document.getElementById('h'),m:document.getElementById('m'),s:document.getElementById('s')};
+ function setNum(el,val){
+ if(el.textContent !== val){
+ el.textContent = val;
+ el.classList.remove('tick'); void el.offsetWidth; el.classList.add('tick');
+ }
+ }
+ function tick(){
+ const t = EV - Date.now();
+ if(t <= 0){
+ document.querySelector('.cd-row').innerHTML =
+ '<p style="font-family:\'Berkshire Swash\',cursive;font-size:1.4rem;color:var(--azul)">¡Hoy es el gran día! 🕊️</p>';
+ clearInterval(cdTimer);
+ return;
+ }
+ setNum(cdEls.d, pad(Math.floor(t/864e5)));
+ setNum(cdEls.h, pad(Math.floor(t%864e5/36e5)));
+ setNum(cdEls.m, pad(Math.floor(t%36e5/6e4)));
+ setNum(cdEls.s, pad(Math.floor(t%6e4/1e3)));
+ }
+ tick();
+ const cdTimer = setInterval(tick,1000);
 
-  function showRsvp(){
-    document.getElementById('cta-wrap').style.display='none';
-    document.getElementById('rsvp-form').style.display='block';
-    setTimeout(()=>document.getElementById('f-nombre').focus(),80);
-  }
+ /* ───────── CALENDARIO ───────── */
+ const fmtCal = d => d.replace(/[-:]/g,'');
+ const gcalUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+ + '&text=' + encodeURIComponent(EVENTO.titulo)
+ + '&dates=' + fmtCal(EVENTO.inicio) + '/' + fmtCal(EVENTO.fin)
+ + '&ctz=' + encodeURIComponent(EVENTO.tz)
+ + '&details=' + encodeURIComponent(EVENTO.desc)
+ + (EVENTO.lugar ? '&location=' + encodeURIComponent(EVENTO.lugar) : '');
+ document.getElementById('btn-gcal').href = gcalUrl;
+ document.getElementById('btn-gcal-2').href = gcalUrl;
 
-  async function submitRsvp(){
-    const nombre=document.getElementById('f-nombre').value.trim();
-    const personas=parseInt(document.getElementById('f-personas').value)||1;
-    const lado=document.querySelector('input[name="lado"]:checked').value;
-    const btn=document.getElementById('submit-btn');
-    if(!nombre){document.getElementById('f-nombre').focus();return;}
-    btn.disabled=true;btn.textContent='Enviando...';
-    try{
-      const r=await fetch(`${SUPA}/rest/v1/confirmaciones_bautizo`,{
-        method:'POST',
-        headers:{'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
-        body:JSON.stringify({nombre_familia:nombre,num_personas:personas,lado})
-      });
-      if(r.ok||r.status===201){
-        document.getElementById('rsvp-form').style.display='none';
-        document.getElementById('success-msg').style.display='block';
-      } else {throw new Error(r.status);}
-    }catch(e){
-      btn.disabled=false;btn.textContent='Confirmar asistencia ✓';
-      alert('Hubo un error. Por favor intenta de nuevo.');
-    }
-  }
+ document.getElementById('btn-ics').addEventListener('click', () => {
+ const ics = [
+ 'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//bautizo-elias//ES',
+ 'BEGIN:VEVENT',
+ 'UID:bautizo-elias-2026@invitacion.frasalenergy.com',
+ 'DTSTAMP:' + new Date().toISOString().replace(/[-:]/g,'').split('.')[0] + 'Z',
+ 'DTSTART;TZID=' + EVENTO.tz + ':' + fmtCal(EVENTO.inicio),
+ 'DTEND;TZID=' + EVENTO.tz + ':' + fmtCal(EVENTO.fin),
+ 'SUMMARY:' + EVENTO.titulo,
+ 'DESCRIPTION:' + EVENTO.desc.replace(/,/g,'\\,'),
+ EVENTO.lugar ? 'LOCATION:' + EVENTO.lugar.replace(/,/g,'\\,') : '',
+ 'BEGIN:VALARM','TRIGGER:-P1D','ACTION:DISPLAY','DESCRIPTION:Mañana es el bautizo de Elías','END:VALARM',
+ 'END:VEVENT','END:VCALENDAR'
+ ].filter(Boolean).join('\r\n');
+ const blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
+ const a = document.createElement('a');
+ a.href = URL.createObjectURL(blob);
+ a.download = 'bautizo-elias.ics';
+ document.body.appendChild(a); a.click(); a.remove();
+ setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+ });
+
+ /* ───────── COMPARTIR ───────── */
+ document.getElementById('btn-share').addEventListener('click', async () => {
+ const data = {
+ title: EVENTO.titulo,
+ text: '🕊️ Estás invitado al bautizo de Elías · Sábado 18 de julio de 2026, 12:00 p.m.',
+ url: 'https://invitacion.frasalenergy.com'
+ };
+ if(navigator.share){
+ try{ await navigator.share(data); }catch(e){}
+ } else {
+ window.open('https://wa.me/?text=' + encodeURIComponent(data.text + '\n' + data.url), '_blank');
+ }
+ });
+
+ /* ───────── REVEAL ON SCROLL ───────── */
+ const io = new IntersectionObserver(entries => {
+ entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+ }, {threshold:.12});
+ document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+ /* ───────── RSVP (Supabase, sin cambios de backend) ───────── */
+ const SUPA = 'https://ewkosyqwtmrwmzkdqadd.supabase.co';
+ const KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV3a29zeXF3dG1yd216a2RxYWRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxNjUwNzcsImV4cCI6MjA5MDc0MTA3N30.2QgHzrIXwDc9PpezfkM13roY86F0NDk4hqvhNKOJ2os';
+
+ let personas = 1;
+ function stepPersonas(delta){
+ personas = Math.min(30, Math.max(1, personas + delta));
+ document.getElementById('f-personas').textContent = personas;
+ document.getElementById('step-note').textContent = personas === 1 ? 'persona' : 'personas';
+ }
+
+ function showRsvp(){
+ document.getElementById('cta-wrap').style.display = 'none';
+ document.getElementById('rsvp-form').style.display = 'block';
+ setTimeout(() => document.getElementById('f-nombre').focus(), 80);
+ }
+
+ function lanzarPalomas(){
+ const n = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 9;
+ for(let i = 0; i < n; i++){
+ const s = document.createElement('span');
+ s.className = 'dove-fly';
+ s.textContent = '🕊️';
+ s.style.left = (8 + Math.random()*84) + '%';
+ s.style.setProperty('--dx', (Math.random()*120 - 60) + 'px');
+ s.style.setProperty('--dr', (Math.random()*40 - 20) + 'deg');
+ s.style.animationDelay = (Math.random()*.9) + 's';
+ document.body.appendChild(s);
+ setTimeout(() => s.remove(), 4500);
+ }
+ }
+
+ async function submitRsvp(){
+ const nombre = document.getElementById('f-nombre').value.trim();
+ const lado = document.querySelector('input[name="lado"]:checked').value;
+ const btn = document.getElementById('submit-btn');
+ const err = document.getElementById('form-err');
+ err.style.display = 'none';
+ if(!nombre){ document.getElementById('f-nombre').focus(); return; }
+ btn.disabled = true; btn.textContent = 'Enviando...';
+ try{
+ const r = await fetch(`${SUPA}/rest/v1/confirmaciones_bautizo`, {
+ method: 'POST',
+ headers: {
+ 'apikey': KEY,
+ 'Authorization': 'Bearer ' + KEY,
+ 'Content-Type': 'application/json',
+ 'Prefer': 'return=minimal'
+ },
+ body: JSON.stringify({nombre_familia: nombre, num_personas: personas, lado})
+ });
+ if(r.ok || r.status === 201){
+ document.getElementById('rsvp-form').style.display = 'none';
+ document.getElementById('success-detail').textContent =
+ `${nombre} · ${personas} ${personas === 1 ? 'persona confirmada' : 'personas confirmadas'}.`;
+ const ok = document.getElementById('success-msg');
+ ok.style.display = 'block';
+ ok.scrollIntoView({behavior:'smooth', block:'center'});
+ lanzarPalomas();
+ } else { throw new Error(r.status); }
+ }catch(e){
+ btn.disabled = false; btn.textContent = 'Confirmar asistencia ✓';
+ err.style.display = 'block';
+ }
+ }
 </script>
 </body>
 </html>
