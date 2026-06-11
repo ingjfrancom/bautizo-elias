@@ -546,10 +546,23 @@
  <div class="rsvp-form" id="rsvp-form">
  <p class="form-ttl">Confirmar asistencia</p>
  <div class="form-grp">
- <label class="form-lbl" for="f-nombre">Nombre o familia</label>
- <input type="text" id="f-nombre" class="form-inp" placeholder="Ej. Familia García" autocomplete="name" maxlength="80"/>
+ <span class="form-lbl">¿Cómo asistes?</span>
+ <div class="radio-grp">
+ <label class="radio-opt">
+ <input type="radio" name="tipo" value="individual" checked onchange="updateTipoAsistencia()"/>
+ <span class="radio-pill">Individual</span>
+ </label>
+ <label class="radio-opt">
+ <input type="radio" name="tipo" value="familia" onchange="updateTipoAsistencia()"/>
+ <span class="radio-pill">En familia</span>
+ </label>
+ </div>
  </div>
  <div class="form-grp">
+ <label class="form-lbl" for="f-nombre" id="lbl-nombre">Tu nombre completo</label>
+ <input type="text" id="f-nombre" class="form-inp" placeholder="Ej. Juan García López" autocomplete="name" maxlength="80"/>
+ </div>
+ <div class="form-grp" id="grp-personas" style="display:none">
  <span class="form-lbl" id="lbl-personas">¿Cuántas personas asisten?</span>
  <div class="stepper" role="group" aria-labelledby="lbl-personas">
  <button class="step-btn" type="button" aria-label="Quitar una persona" onclick="stepPersonas(-1)">−</button>
@@ -716,9 +729,29 @@
  document.getElementById('step-note').textContent = personas === 1 ? 'persona' : 'personas';
  }
 
+ function updateTipoAsistencia(){
+ const tipo = document.querySelector('input[name="tipo"]:checked').value;
+ const lbl = document.getElementById('lbl-nombre');
+ const inp = document.getElementById('f-nombre');
+ const grpP = document.getElementById('grp-personas');
+ if(tipo === 'individual'){
+ lbl.textContent = 'Tu nombre completo';
+ inp.placeholder = 'Ej. Juan García López';
+ grpP.style.display = 'none';
+ personas = 1;
+ document.getElementById('f-personas').textContent = '1';
+ document.getElementById('step-note').textContent = 'persona';
+ } else {
+ lbl.textContent = 'Nombre de familia';
+ inp.placeholder = 'Ej. Familia García';
+ grpP.style.display = '';
+ }
+ }
+
  function showRsvp(){
  document.getElementById('cta-wrap').style.display = 'none';
  document.getElementById('rsvp-form').style.display = 'block';
+ updateTipoAsistencia();
  setTimeout(() => document.getElementById('f-nombre').focus(), 80);
  }
 
