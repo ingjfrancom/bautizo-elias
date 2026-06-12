@@ -805,7 +805,7 @@
           'Content-Type': 'application/json',
           'Prefer': 'return=minimal'
         },
-        body: JSON.stringify({nombre_familia: nombre, num_personas: numPersonas, lado, tipo})
+        body: JSON.stringify({nombre_familia: nombre, num_personas: numPersonas, lado})
       });
       if(r.ok || r.status === 201){
         document.getElementById('rsvp-form').style.display = 'none';
