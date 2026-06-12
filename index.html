@@ -715,8 +715,9 @@
  /* ───────── REVEAL ON SCROLL ───────── */
  const io = new IntersectionObserver(entries => {
  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
- }, {threshold:.12});
+ }, {threshold:0, rootMargin:'0px 0px -40px 0px'});
  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+ setTimeout(() => document.querySelectorAll('.rv').forEach(el => el.classList.add('in')), 800);
 
  /* ───────── RSVP (Supabase, sin cambios de backend) ───────── */
  const SUPA = 'https://ewkosyqwtmrwmzkdqadd.supabase.co';
