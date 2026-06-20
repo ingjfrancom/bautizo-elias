@@ -200,6 +200,63 @@
       color:var(--tinta-2);margin-bottom:.85rem;font-style:italic;
     }
 
+    /* ───────── CÓDIGO DE VESTIMENTA ───────── */
+    .vest-card{
+      background:linear-gradient(165deg,var(--blanco),var(--hielo));
+      border:1px solid #dbe6f5;border-radius:16px;
+      padding:1.3rem 1.1rem 1.4rem;
+      box-shadow:0 10px 30px -14px rgba(23,58,120,.18);
+      text-align:center;
+    }
+    .vest-titulo{
+      font-family:'Berkshire Swash',cursive;font-size:1.45rem;
+      color:var(--azul);letter-spacing:.04em;margin-bottom:1.15rem;
+    }
+    .vest-grid{
+      display:flex;align-items:flex-start;
+      text-align:left;margin-bottom:1.25rem;
+    }
+    .vest-col{flex:1;padding:0 .6rem}
+    .vest-col-ttl{
+      font-size:.55rem;letter-spacing:.26em;text-transform:uppercase;
+      color:var(--azul-m);font-weight:500;margin-bottom:.6rem;
+      display:flex;align-items:center;gap:.35rem;
+    }
+    .vest-col-ttl svg{flex-shrink:0;stroke:var(--azul-m)}
+    .vest-divider{
+      width:1px;
+      background:linear-gradient(to bottom,transparent,#dde7f4 25%,#dde7f4 75%,transparent);
+      margin:0 .1rem;align-self:stretch;min-height:90px;
+    }
+    .vest-list{list-style:none;padding:0}
+    .vest-list li{
+      font-family:'EB Garamond',serif;font-size:.95rem;color:var(--tinta);
+      padding:.28rem 0 .28rem .9rem;border-bottom:1px solid #eef3fb;
+      line-height:1.4;position:relative;
+    }
+    .vest-list li::before{
+      content:"·";color:var(--azul-c);
+      position:absolute;left:0;font-size:1.1rem;line-height:1.3;
+    }
+    .vest-list li:last-child{border-bottom:none}
+    .vest-no{color:var(--tinta-3)!important;font-style:italic}
+    .vest-paleta-ttl{
+      font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;
+      color:var(--tinta-3);margin-bottom:.8rem;font-weight:500;
+    }
+    .vest-swatches{
+      display:flex;justify-content:center;gap:1.4rem;flex-wrap:wrap;
+    }
+    .sw-group{position:relative;width:50px;height:54px;flex-shrink:0}
+    .sw{
+      width:30px;height:30px;border-radius:50%;
+      border:2.5px solid var(--blanco);position:absolute;
+      box-shadow:0 2px 8px rgba(0,0,0,.13);
+    }
+    .sw-1{top:0;left:0;z-index:3}
+    .sw-2{top:12px;left:15px;z-index:2}
+    .sw-3{top:24px;left:0;z-index:1}
+
     /* ───────── RSVP ───────── */
     .rsvp-form{
       background:var(--blanco);border:1px solid var(--hielo);
@@ -544,6 +601,64 @@
     </div>
 
     <!-- RSVP -->
+    <div class="rv">
+      <p class="sec-eye">Código de vestimenta</p>
+      <div class="vest-card">
+        <p class="vest-titulo">Semi Formal</p>
+        <div class="vest-grid">
+          <div class="vest-col">
+            <p class="vest-col-ttl">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="5" r="3"/><path d="M6 22V12l6-3 6 3v10"/><path d="M9 22v-5a2.5 4 0 0 1 6 0v5"/>
+              </svg>
+              Mujeres
+            </p>
+            <ul class="vest-list">
+              <li>Vestido o traje, largo o midi</li>
+              <li class="vest-no">Evitar blanco y negro</li>
+            </ul>
+          </div>
+          <div class="vest-divider" aria-hidden="true"></div>
+          <div class="vest-col">
+            <p class="vest-col-ttl">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="5" r="3"/><path d="M6 9h12l-1.5 6H7.5L6 9z"/><path d="M7.5 15l-1 7M16.5 15l1 7M12 15v7"/>
+              </svg>
+              Hombres
+            </p>
+            <ul class="vest-list">
+              <li>Camisa manga larga fresca</li>
+              <li>Pantalón de vestir claro</li>
+              <li class="vest-no">Sin corbata</li>
+            </ul>
+          </div>
+        </div>
+        <p class="vest-paleta-ttl">Colores sugeridos</p>
+        <div class="vest-swatches" aria-label="Paleta de colores recomendada">
+          <div class="sw-group">
+            <span class="sw sw-1" style="background:#3d6b45" title="Verde bosque"></span>
+            <span class="sw sw-2" style="background:#7fa678" title="Verde salvia"></span>
+            <span class="sw sw-3" style="background:#b8d4b0" title="Menta suave"></span>
+          </div>
+          <div class="sw-group">
+            <span class="sw sw-1" style="background:#e8d878" title="Amarillo pastel"></span>
+            <span class="sw sw-2" style="background:#e0ceb0" title="Crema / Champagne"></span>
+            <span class="sw sw-3" style="background:#bfa0a8" title="Malva rosado"></span>
+          </div>
+          <div class="sw-group">
+            <span class="sw sw-1" style="background:#90bcd8" title="Azul cielo"></span>
+            <span class="sw sw-2" style="background:#a8c4d8" title="Azul polvo"></span>
+            <span class="sw sw-3" style="background:#98aac0" title="Gris acero"></span>
+          </div>
+          <div class="sw-group">
+            <span class="sw sw-1" style="background:#e0b0b0" title="Rosa blush"></span>
+            <span class="sw sw-2" style="background:#c89898" title="Rosa palo"></span>
+            <span class="sw sw-3" style="background:#a88878" title="Taupe cálido"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="rv">
       <p class="sec-eye">Confirmación</p>
       <div id="cta-wrap">
